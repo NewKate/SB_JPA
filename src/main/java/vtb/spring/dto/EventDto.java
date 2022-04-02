@@ -1,41 +1,24 @@
-package vtb.spring.model;
+package vtb.spring.dto;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import vtb.spring.model.Opera;
 
 import java.util.Date;
 
-public class Event {
+public class EventDto {
 
+    @JsonProperty
     private Opera opera;
+    @JsonProperty
     private Date eventDate;
+    @JsonProperty
     private Integer total;
+    @JsonProperty
     private Integer available;
+    @JsonProperty
     private String status;
+    @JsonProperty
     private String comment;
-
-
-   /* public Event(){}
-
-    public Event(Opera opera, Date eventDate) {
-        this.opera = opera;
-        this.eventDate = eventDate;
-    }*/
-
-    public Event(Opera opera, Date eventDate, Integer total, Integer available) {
-        this.opera = opera;
-        this.eventDate = eventDate;
-        this.total = total;
-        this.available = available;
-        this.status = "Актуально";
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public Opera getOpera() {
         return opera;
@@ -67,6 +50,14 @@ public class Event {
 
     public void setAvailable(Integer available) {
         this.available = available;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getComment() {

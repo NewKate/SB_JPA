@@ -1,30 +1,23 @@
-package vtb.spring.model;
+package vtb.spring.dto;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Opera {
+public class OperaDto {
 
+    @JsonProperty
     private Integer id;
+    @JsonProperty
     private String label;
+    @JsonProperty
     private String description;
+    @JsonProperty
     private Integer age;
+    @JsonProperty
     private String duration;
+    @JsonProperty
     private Integer intermission;
+    @JsonProperty
     private String type;
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Opera(String label, Integer age, String type) {
-        this.label = label;
-        this.age = age;
-        this.type = type;
-    }
 
     public String getLabel() {
         return label;
@@ -66,11 +59,13 @@ public class Opera {
         this.intermission = intermission;
     }
 
-    public Integer getId() {
-        return id;
+    public String getType() {
+        return type;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setType(String type) {
+        this.type = type;
     }
+
 }
+
