@@ -53,7 +53,7 @@ public class OperaSalesApplication {
 
         //operaService.printAll();
 
-//        operaService.changeEventDate(27, "15.11.2021 19:00", "15.12.2021 19:00");
+       // operaService.changeEventDate(27, "15.11.2021 19:00", "15.12.2021 19:00");
 //        operaService.printAllEvents();
 
     }
