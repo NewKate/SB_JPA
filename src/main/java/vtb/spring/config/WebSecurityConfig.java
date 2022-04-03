@@ -19,12 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/resources", "/operas", "/operas/like/**",
-                        "/events/", "/events/actual/",  "/events/date/**", "/events/event/**").permitAll()
+                .antMatchers("/resources", "/operas", "/events/").permitAll()
                 .antMatchers("/registration").not().authenticated()
-                .antMatchers("/user/**","/operas/**","/events/**").hasRole("USER")
-                //.antMatchers("/user/**", "/operas/**", "/events/**").authenticated()
-                .antMatchers("/api/v1").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/resources", "/operas/like/**",
+                       "/events/actual/",  "/events/date/**", "/events/event/**").permitAll()
+                .antMatchers("/user/**","/operas/**","/events/**").hasRole("ADMIN")
                 .and()
                 .formLogin();
 
