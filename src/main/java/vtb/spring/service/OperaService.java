@@ -70,12 +70,14 @@ public class OperaService implements ApplicationContextAware {
         repository.save(operaEntity);
     }
 
-    public void save(String label, Integer age, String type){
-        OperaEntity  opera = new OperaEntity();
-        opera.setLabel(label);
-        opera.setAge(age);
-        opera.setType(type);
-        repository.save(opera);
+    public void update(Opera opera){
+        OperaEntity byId = repository.getById(opera.getId());
+
+        OperaEntity operaEntity = new OperaEntity();
+        operaEntity.setLabel(opera.getLabel());
+        operaEntity.setAge(opera.getAge());
+        operaEntity.setType(opera.getType());
+        repository.save(operaEntity);
     }
 
     public void delete(Integer operaId){
